@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useParams } from 'react-router-dom';
 import './App.css';
+import FlashCardList from './flashCardListComponent';
+import { flashCardsData } from './flashCardDS';
 
 function Home() {
   const navigate = useNavigate();
@@ -14,7 +16,7 @@ function Home() {
       <div className="header-container">
         <h1>Python Leetcode Grind Assistant</h1>
         <p>A tool to help you master Leetcode problems by understanding their patterns and 'tricks'!</p>
-        <p>Created and written by Josue Lopez</p>
+        <p>All content created and written by Josue Lopez</p>
       </div>
       <div className="boxes-container">
         <div className="box1">
@@ -303,6 +305,7 @@ const topicContent = {
 const TopicPage = () => {
   const { topic } = useParams();
   const topicData = topicContent[topic];
+  const flashcards = flashCardsData[topic];
 
   if (!topicData) {
     return (
@@ -316,7 +319,13 @@ const TopicPage = () => {
   return (
     <div>
       <h1>{topicData.title}</h1>
-      <p>{topicData.content}</p>
+      <div>{topicData.content}</div>
+      {flashcards && flashcards.length > 0 && (
+        <>
+          <h3>Flashcards:</h3>
+          <FlashCardList flashcards={flashcards} />
+        </>
+      )}
       <Link to="/">Back to Home</Link>
     </div>
   );

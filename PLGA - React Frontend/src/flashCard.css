@@ -1,0 +1,19 @@
+.flashcard {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .flashcard:hover {
+    transform: scale(1.05);
+  }
+  
+  .flashcard p {
+    margin: 0;
+  }
