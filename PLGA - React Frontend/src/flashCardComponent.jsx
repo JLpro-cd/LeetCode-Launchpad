@@ -1,11 +1,15 @@
-import react, {useState} from 'react';
+import React, {useState} from 'react';
 import './flashCard.css';
 
-function FlashCard({ flashcard }) {
+function FlashCard({ flashcard, onAnswerClick }) {
     const [showAnswer, setShowAnswer] = useState(false);
 
     const handleClick = () => {
-        setShowAnswer(!showAnswer);
+        if (showAnswer) {
+            onAnswerClick();
+        } else {
+            setShowAnswer(true);
+        }
     };
 
     return (

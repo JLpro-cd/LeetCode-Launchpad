@@ -1,19 +1,36 @@
+.flashcard-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the flashcards horizontally */
+  gap: 1rem; /* Space between flashcards */
+  margin-top: 2rem; /* Space above the flashcard list */
+}
+
 .flashcard {
-    background-color: #ffffff;
-    color: #333333;
-    border: 1px solid #dddddd;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 8px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .flashcard:hover {
-    transform: scale(1.05);
-  }
-  
-  .flashcard p {
-    margin: 0;
-  }
+  background-color: #ffffff;
+  color: #0a0000;
+  border: 1px solid #15137c;
+  border-radius: 20px;
+  padding: 16px;
+  margin: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  width: 200px; /* Adjust width as needed */
+  text-align: center; /* Center text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+.flashcard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect on hover */
+}
+
+.flashcard-question, .flashcard-answer {
+  margin: 0;
+  padding: 8px 0;
+  font-size: 1rem; /* Adjust font size as needed */
+}
+
+.flashcard-answer {
+  color: #000000; 
+}
