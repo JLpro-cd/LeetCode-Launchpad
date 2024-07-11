@@ -18,25 +18,25 @@
 
 ## Installation
 
-1. ** Clone Repository: **
+1. **Clone Repository:**
  
    ```
    git clone https://github.com/JLpro-cd/Python-Leetcode-Grind-Assistant
    ```
 
-2. ** Install Dependencies: **
+2. **Install Dependencies:**
 
    ```
    cd leetcodegrindassistant/PLGA-react-frontend
    npm install
    ```
 
-3. ** Start App **
+3. **Start App**
 
     ```
    npm run dev
    ```
-** Open your browser and navigate to http://localhost:3000 to see the application in action. **
+**Open your browser and navigate to http://localhost:3000 to see the application in action.**
 
    
 
