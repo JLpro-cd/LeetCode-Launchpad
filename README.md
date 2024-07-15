@@ -9,7 +9,7 @@
 ## Features
 
 - Explore specific data structures or problem categories through detailed examples with step-by-step explanations.
-- Utilize flashcards to help memorize 'tricks' and abstract patterns associated with various problems.
+- Utilize flashcards to master the time complexities of various methods associated with the most used Python data structures.
 
 ## Planned Features
 
