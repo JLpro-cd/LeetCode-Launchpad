@@ -72,12 +72,62 @@ const topicContent = {
       title: "Hashing",
       content: (
         <div>
-          <p>Hashing is a technique used to uniquely identify a specific object from a group of similar objects. It is commonly used in data structures like hash tables and maps.</p>
+          <p>Hashing is a technique used to uniquely identify a specific object from a group of similar objects. It involves converting data into a fixed-size integer, which acts as a unique identifier (hash code). <br /><br /> Hashing is commonly used in data structures like hash tables, maps, and sets to enable fast data retrieval, insertion, and deletion operations.</p>
           <h3>Examples:</h3>
           <ul>
-            <li>Implementing a hash table</li>
-            <li>Checking for duplicates in an array</li>
-            <li>Finding the first non-repeating character in a string</li>
+            <li>
+              <div className="example-container">
+                <div className="example-content">
+                  <a href="https://leetcode.com/problems/find-the-difference-of-two-arrays/description/" target="_blank" rel="noopener noreferrer">Find the Difference of Two Arrays</a>
+                  <p className="example-description">Given two 0-indexed arrays <code>nums1</code> and <code>nums2</code>, return a list <code>answer</code> where <code>answer[0]</code> has all distinct values in <code>nums1</code> but not in <code>nums2</code>, and <code>answer[1]</code> has all distinct values in <code>nums2</code> but not in <code>nums1</code></p>
+                </div>
+                <div className="separator"></div>
+                <div className="trick-description">
+                  Although this problem is relatively simple, it highlights an important point when it comes to hashing in Python. "Do I want to use a set or a dictionary here?" <br></br>
+                  One of the main considerations in deciding between a set and a dictionary is whether you need to keep track of the frequency of values. If frequency tracking is required, then a dictionary is the appropriate choice. <br></br>If you only care about the presence of values, a set will likely suffice and be easier to work with. <br></br>
+                  <br></br>
+                  In this problem, we only care about distinct integers and whether they are in the other list, so a set is more appropriate. We can convert these initial lists into sets using <code>set(nums1)</code> and <code>set(nums2)</code>. This allows us to efficiently check for the presence of elements between the two lists. Now, we can iterate through both lists separately, checking if each number is not in the other list's set. If it isn't, we are free to add it to our answer list. <br></br>
+                  <br></br>
+                  <b>BUT WAIT!</b><br></br>
+                  <br></br>
+                  As our answer currently is, we will be returning duplicates in our answer list (i.e. <code>[[3, 3] [4, 5]]</code> where it should be <code>[[3], [4, 5]]</code>). Does this ring any bells? Instead of inserting our numbers into answer lists, we can add them to two separate sets, and then convert them back to lists at the end with <code>list()</code>. This will ensure our answer lists have no duplicates.
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="example-container">
+                <div className="example-content">
+                  <a href="https://leetcode.com/problems/unique-number-of-occurrences/description/" target="_blank" rel="noopener noreferrer">Unique Number of Occurrences</a>
+                  <p className="example-description">Given an array of integers, return <code>True</code> if the number of occurrences of each value in the array is unique or <code>False</code> otherwise</p>
+                </div>
+                <div className="separator"></div>
+                <div className="trick-description">
+                  The word 'occurrences' in the title and description should alarm us that we might need to use a dictionary. <br></br>Essentially, we want to count how many occurrences each value has (i.e. its frequency), which we can do by iterating through and updating our dictionary, which we'll call <code>freq</code>. <br></br>
+                  We can safely create new occurrences and update existing ones in <code>freq</code> by iterating through the array and using the <code>.get()</code> method: <br></br>
+                  <br></br>
+                  <code>freq[num] = freq.get(num, 0) + 1 </code> <br></br>
+                  <br></br>
+                  This is essentially saying "update existing values' counts by one, or initialize the count to one if it doesn't exist yet". We have to be careful with trying to access values in a dictionary that do not exist (or else errors occur), which why we do it this way. <br></br>
+                  Finally, we can iterate through <code>freq.values()</code>, checking for duplicates. You can do this with a new set, where we check if the value is within it. If it is, return <code>False</code>, otherwise, add it to the set. If we make it past this loop, we can safely <code>return True</code>.
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="example-container">
+                <div className="example-content">
+                  <a href="https://leetcode.com/problems/determine-if-two-strings-are-close/description/" target="_blank" rel="noopener noreferrer">Determine if Two Strings Are Close</a>
+                  <p className="example-description">Two strings are considered close if you can attain one from the other using the following operations: 1. Swap any two existing characters. 2. Transform every occurence of one existing character into another, and do the same with the other character</p>
+                </div>
+                <div className="separator"></div>
+                <div className="trick-description">
+                  I recommend that you click on the Leetcode link and read their description if you are confused, as the premise of the problem can be hard to understand.<br></br>
+                  This one seems tricky, but it's actually straightforward you understand what it is asking. Despite both operations, we still need the same set of characters in both strings. Therefore, we can check if <code>set(word1) != set(word2)</code> and <code>return False</code> if they are not equal. <br></br>
+                  However, it's still possible that the two strings are not 'close' even if they make it past this check. Knowing that they do have the same set of characters, we need to compare the frequencies of these characters. The specific characters don’t matter; only the frequencies themselves do. <br></br>
+                  We can use <code>Counter(word1)</code> and <code>Counter(word2)</code> to find the frequencies  (lets call the result <code>counter1</code> and <code>counter2</code>) of each letter, and then sort <code>counter1.values()</code> and <code>counter2.values()</code>. Once we have them sorted, we just need to check if they are equal. <br></br>
+                  If they are, then <code>return True</code>, otherwise <code>return False</code>
+                </div>
+              </div>
+            </li>
           </ul>
         </div>
       )
@@ -156,18 +206,18 @@ const topicContent = {
       title: "List",
       content: (
         <div>
-          <p>Dictionaries are data structures that store key-value pairs. They provide efficient lookup, insertion, and deletion operations based on the key.</p>
+          <p>Lists are ordered collections of elements. They provide efficient insertion, deletion, and access operations based on the position of the elements.</p>
           <h3>Examples:</h3>
           <ul>
-            <li>Counting the frequency of elements in an array</li>
-            <li>Implementing a simple cache</li>
-            <li>Mapping relationships between objects</li>
+            <li>Reversing a list</li>
+            <li>Sorting a list</li>
+            <li>Finding the maximum and minimum values in a list</li>
           </ul>
         </div>
       )
     },
-    "sets": {
-      title: "Sets",
+    "set": {
+      title: "Set",
       content: (
         <div>
           <p>Sets are data structures that store unique elements. They provide efficient membership testing, insertion, and deletion operations.</p>
@@ -184,12 +234,12 @@ const topicContent = {
       title: "Dictionary",
       content: (
         <div>
-          <p>Lists are ordered collections of elements. They provide efficient insertion, deletion, and access operations based on the position of the elements.</p>
+          <p>Dictionaries are data structures that store key-value pairs. They provide efficient lookup, insertion, and deletion operations based on the key.</p>
           <h3>Examples:</h3>
           <ul>
-            <li>Reversing a list</li>
-            <li>Sorting a list</li>
-            <li>Finding the maximum and minimum values in a list</li>
+            <li>Counting the frequency of elements in an array</li>
+            <li>Implementing a simple cache</li>
+            <li>Mapping relationships between objects</li>
           </ul>
         </div>
       )

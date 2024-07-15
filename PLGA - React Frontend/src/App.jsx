@@ -37,7 +37,7 @@ function Home() {
           <h2>Study a specific data structure</h2>
           <ul>
             <li onClick={() => handleItemClick('List')}><div>List</div></li>
-            <li onClick={() => handleItemClick('Sets')}><div>Set</div></li>
+            <li onClick={() => handleItemClick('Set')}><div>Set</div></li>
             <li onClick={() => handleItemClick('Dictionary')}><div>Dictionary</div></li>
             <li onClick={() => handleItemClick('Linked List')}><div>Linked List</div></li>
             <li onClick={() => handleItemClick('Stack')}><div>Stack</div></li>
