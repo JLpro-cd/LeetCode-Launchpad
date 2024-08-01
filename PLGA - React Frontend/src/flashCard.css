@@ -7,7 +7,7 @@
 }
 
 .flashcard {
-  background-color: #ffffff;
+  background: linear-gradient(135deg, hwb(207 60% 5%), hwb(202 97% 0%));
   color: #0a0000;
   border: 1px solid #15137c;
   border-radius: 20px;
@@ -15,26 +15,53 @@
   margin: 8px;
   cursor: pointer;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  width: 200px; /* Adjust width as needed */
+  width: 220px; /* Adjust width as needed */
+  height: 250px; /* Fixed height */
   text-align: center; /* Center text */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow effect */
   -webkit-user-select: none;  /* Safari */
   -moz-user-select: none;     /* Firefox */
   -ms-user-select: none;      /* Internet Explorer/Edge */
   user-select: none; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide overflow content */
 }
 
 .flashcard:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow effect on hover */
 }
 
 .flashcard-question, .flashcard-answer {
   margin: 0;
   padding: 8px 0;
   font-size: 1rem; /* Adjust font size as needed */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Handle overflow text */
+  white-space: nowrap; /* Prevent text wrapping */
+  width: 100%; /* Ensure ellipsis works */
 }
 
 .flashcard-answer {
   color: #000000; 
+}
+
+/* Additional styles for typography */
+.flashcard-question {
+  font-family: 'Arial', sans-serif; /* Use a clean, readable font */
+  font-weight: 900; /* Semi-bold for better emphasis */
+}
+
+.flashcard-answer {
+  font-family: 'Arial', sans-serif; /* Use a clean, readable font */
+  font-weight: 800; /* Regular weight */
+  margin-top: 8px; /* Space between question and answer */
+}
+
+/* Adjust container to align items properly */
+.flashcard-list {
+  align-items: center; /* Center the flashcards vertically in the container */
 }

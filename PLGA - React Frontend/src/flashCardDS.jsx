@@ -92,9 +92,218 @@ export const flashCardsData = {
             answer: "O(n), as it removes all elements from the set."
         }
     ],
-    dictionary: [],
-    linkedList: [],
-    stack: [],
-    queue: [],
-    tree: [],
+    dictionary: [
+        {
+            question: "What is the time complexity of dict.get(key)?",
+            answer: "O(1) on average. This is for retrieving a value by key."
+        },
+        {
+            question: "What is the time complexity of dict[key] = value?",
+            answer: "O(1) on average."
+        },
+        {
+            question: "What is the time complexity of dict.pop(key)?",
+            answer: "O(1) on average, but raises a KeyError if the key is not found."
+        },
+        {
+            question: "What is the time complexity of dict.popitem()?",
+            answer: "O(1). This removes and returns the key-value pair last inserted into the dictionary. This used to return an arbitrary pair, until version 3.7, where dictionaries and sets began having order as well."
+        },
+        {
+            question: "What is the time complexity of checking membership? (key in dict)",
+            answer: "O(1) on average. This is one of the strong points of dictionaries."
+        },
+        {
+            question: "What is the time complexity of dict.update(other_dict)?",
+            answer: "O(m), where m is the length of other_dict, as it updates the dictionary with key-value pairs from other_dict."
+        },
+        {
+            question: "What is the time complexity of dict.clear()?",
+            answer: "O(n), as it removes all elements from the dictionary."
+        },
+        {
+            question: "What is the time complexity of dict.copy()?",
+            answer: "O(n). This returns a shallow copy, which is a new dictionary with references to the same objects. Changes to mutable objects in one dictionary will affect the other."
+        },
+        {
+            question: "What is the time complexity of dict.setdefault(key, default)?",
+            answer: "O(1) on average. It inserts a key with a value of default if the key is not in the dictionary."
+        }
+    ],
+    linked_list: [
+        {
+            question: "What is the time complexity of adding an element to the beginning of a linked list?",
+            answer: "O(1). This operation involves updating the head pointer to the new node."
+        },
+        {
+            question: "What is the time complexity of adding an element to the end of a singly linked list?",
+            answer: "O(n). This requires traversal to the end of the list."
+        },
+        {
+            question: "What is the time complexity of adding an element to the end of a doubly linked list?",
+            answer: "O(1), assuming that the tail pointer is maintained. Otherwise, O(n)."
+        },
+        {
+            question: "What is the time complexity of removing an element from a linked list??",
+            answer: "O(1). This requires us to update the head pointer.."
+        },
+        {
+            question: "What is the time complexity of removing an element from the end of a singly linked list?",
+            answer: "O(n). This requires traversal to the second-to-last element."
+        },
+        {
+            question: "What is the time complexity of removing an element from the end of a doubly linked list?",
+            answer: "O(1), assuming the tail pointer is maintained. Otherwise, O(n)."
+        },
+        {
+            question: "What is the time complexity of searching for an element in a linked list?",
+            answer: "O(n). This requires traversal of the list."
+        },
+        {
+            question: "What is the time complexity of adding an element at a specific position in a linked list?",
+            answer: "O(n). This requires traversal to the specified position."
+        },
+        {
+            question: "What is the time complexity of removing an element at a specific position in a linked list?",
+            answer: "O(n). This requires traversal to the specified position."
+        }
+    ],
+    queue: [
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        }
+    ],
+    tree: [
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        }
+    ],
+    heap: [
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        },
+        {
+            question: "",
+            answer: ""
+        }
+    ]
 }

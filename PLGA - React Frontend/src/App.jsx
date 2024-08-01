@@ -9,7 +9,7 @@ function Home() {
 
   const handleItemClick = (item) => {
     console.log(`${item} clicked`);
-    navigate(`/${item.toLowerCase().replace(/ /g, '-')}`);
+    navigate(`/${item.toLowerCase().replace(/ /g, '_')}`);
   };
 
 
@@ -40,9 +40,9 @@ function Home() {
             <li onClick={() => handleItemClick('Set')}><div>Set</div></li>
             <li onClick={() => handleItemClick('Dictionary')}><div>Dictionary</div></li>
             <li onClick={() => handleItemClick('Linked List')}><div>Linked List</div></li>
-            <li onClick={() => handleItemClick('Stack')}><div>Stack</div></li>
-            <li onClick={() => handleItemClick('Queue')}><div>Queue</div></li>
+            <li onClick={() => handleItemClick('Queue')}><div>Queue (deque)</div></li>
             <li onClick={() => handleItemClick('Tree')}><div>Tree</div></li>
+            <li onClick={() => handleItemClick('Heap')}><div>Heap</div></li>
           </ul>
         </div>
       </div>

@@ -1,5 +1,5 @@
 const topicContent = {
-    "two-pointer": {
+    "two_pointer": {
       title: "Two Pointer",
       content: (
         <div>
@@ -132,7 +132,7 @@ const topicContent = {
         </div>
       )
     },
-    "sliding-window": {
+    "sliding_window": {
       title: "Sliding Window",
       content: (
         <div>
@@ -160,7 +160,7 @@ const topicContent = {
         </div>
       )
     },
-    "dynamic-programming": {
+    "dynamic_programming": {
       title: "Dynamic Programming",
       content: (
         <div>
@@ -188,7 +188,7 @@ const topicContent = {
         </div>
       )
     },
-    "binary-search": {
+    "binary_search": {
       title: "Binary Search",
       content: (
         <div>
@@ -244,7 +244,7 @@ const topicContent = {
         </div>
       )
     },
-    "linked-list": {
+    linked_list: {
       title: "Linked List",
       content: (
         <div>
@@ -258,8 +258,8 @@ const topicContent = {
         </div>
       )
     },
-    "stack": {
-      title: "Stack",
+    "heap": {
+      title: "Heap",
       content: (
         <div>
           <p>Sets are data structures that store unique elements. They provide efficient membership testing, insertion, and deletion operations.</p>
@@ -273,7 +273,7 @@ const topicContent = {
       )
     },
     "queue": {
-      title: "Queue",
+      title: "Queue (deque)",
       content: (
         <div>
           <p>Sets are data structures that store unique elements. They provide efficient membership testing, insertion, and deletion operations.</p>
