@@ -1,4 +1,4 @@
-
+/* NEED TO ADD COMMENTS HERE AS WELL*/
 html {
   background-color: #0f13497c; 
   margin: 0;
@@ -35,6 +35,19 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.box1 ul li,
+.box2 ul li {
+  font-size: 1em; /* Normal font size */
+  transition: font-size 0.3s ease; /* Smooth transition applied to both states */
+}
+
+.box1 ul li:hover,
+.box2 ul li:hover {
+  font-size: 1.2em; /* Increased font size on hover */
+  cursor: pointer; /* Show a pointer cursor on hover */
+}
+
 
 ul {
   list-style: none;
@@ -76,6 +89,16 @@ h2 {
   grid-column: 1;
 }
 
+a {
+  display: inline-block; /* Ensures transform works */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+  color: #ff6347;
+  transform: scale(1.05);
+}
+
 .separator {
   grid-column: 2;
   width: 2px;
@@ -88,6 +111,10 @@ h2 {
   color: #ffffff;
   white-space: normal;
   word-wrap: break-word;
+}
+
+.trick-description p {
+  margin-bottom: 1.5rem;
 }
 
 
