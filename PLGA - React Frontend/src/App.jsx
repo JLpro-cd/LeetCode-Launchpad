@@ -24,13 +24,13 @@ function Home() {
         <div className="box1">
           <h2>Select a problem category to study</h2>
           <ul>
-            <li onClick={() => handleItemClick('Two Pointer')}><div>Two Pointer</div></li>
             <li onClick={() => handleItemClick('Hashing')}><div>Hashing</div></li>
+            <li onClick={() => handleItemClick('Two Pointer')}><div>Two Pointer</div></li>
             <li onClick={() => handleItemClick('Sliding Window')}><div>Sliding Window</div></li>
-            <li onClick={() => handleItemClick('Graphs')}><div>Graphs</div></li>
-            <li onClick={() => handleItemClick('Dynamic Programming')}><div>Dynamic Programming</div></li>
-            <li onClick={() => handleItemClick('Backtracking')}><div>Backtracking</div></li>
             <li onClick={() => handleItemClick('Binary Search')}><div>Binary Search</div></li>
+            <li onClick={() => handleItemClick('Graphs')}><div>Graphs</div></li>
+            <li onClick={() => handleItemClick('Backtracking')}><div>Backtracking</div></li>
+            <li onClick={() => handleItemClick('Dynamic Programming')}><div>Dynamic Programming</div></li>
           </ul>
         </div>
         <div className="box2">
