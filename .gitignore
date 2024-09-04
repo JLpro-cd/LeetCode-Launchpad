@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Python cached
+__pycache__/
+*.pyc
+
 #Python virtual environment 
 venv/
 
