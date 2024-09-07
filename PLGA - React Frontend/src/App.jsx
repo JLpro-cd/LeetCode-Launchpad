@@ -3,6 +3,8 @@ import './App.css';
 import FlashCardList from './flashCardListComponent';
 import { flashCardsData } from './flashCardDS';
 import topicContent from './topicContent';
+import SignUp from './SignUp';
+import SignIn from './SignIn';
 
 function Home() {
   const navigate = useNavigate();
@@ -86,6 +88,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/:topic" element={<TopicPage />} />
+      <Route path="/signin" element={<SignIn />} />
+      <Route path="/signup" element={<SignUp />} />
     </Routes>
   );
 }
