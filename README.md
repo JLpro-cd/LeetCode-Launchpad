@@ -19,6 +19,7 @@
 - Spaced repetition for flashcards to enhance retention.
 - Progress tracking for completed problem categories.
 - OpenAI GPT assistant to provide hints and explanations for Leetcode problems (API key integration and secure storage).
+- **Deployment**: Plan to deploy the app using AWS with PostgreSQL for production.
 
 ## Installation
 1. **Clone Repository:**
