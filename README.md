@@ -14,7 +14,6 @@
 ## Features
 - Explore specific data structures or problem categories through detailed examples with step-by-step explanations.
 - Utilize flashcards to master the time complexities of various methods associated with the most used Python data structures.
-- Sign up/Log in to keep track of your studying progress!
 
 ## Planned Features
 - Spaced repetition for flashcards to enhance retention.
