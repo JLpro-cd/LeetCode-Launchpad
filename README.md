@@ -21,7 +21,7 @@
 - OpenAI GPT assistant to provide hints and explanations for Leetcode problems (API key integration and secure storage).
 - **Deployment**: Plan to deploy the app using AWS with PostgreSQL for production.
 
-## Installation
+## Installation - Now defunct since switching to Django, will update soon! Likely, will be deployed by then as mentioned above.
 1. **Clone Repository:**
  
    ```
