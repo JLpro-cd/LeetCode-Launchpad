@@ -1,23 +1,27 @@
 # Python Leetcode Grind Assistant
 
 ## Introduction
-
-- This is a project I started working on in order to gain some more experience with React while deepening my understanding of Leetcode-related concepts.
-- The Python Leetcode Grind Assistant is designed to assist individuals preparing for technical interviews, particularly those using Python.
+- This is a project I started working on in order to gain some more experience with React and Django while deepening my understanding of Leetcode-related concepts.
+- The Python Leetcode Grind Assistant is designed for individuals at any level preparing for technical interviews, particularly focusing on Python.
 - The emphasis is on problem-solving 'tricks' and memorization of abstract patterns.
 
-## Features
+## Technologies Used
+- **Frontend**: React
+- **Backend**: Django, Django REST Framework
+- **Database**: SQLite (PostgreSQL planned for production)
+- **Authentication**: Django's built-in user authentication system
 
+## Features
 - Explore specific data structures or problem categories through detailed examples with step-by-step explanations.
 - Utilize flashcards to master the time complexities of various methods associated with the most used Python data structures.
 
 ## Planned Features
+- Spaced repetition for flashcards to enhance retention.
+- Progress tracking for completed problem categories.
+- OpenAI GPT assistant to provide hints and explanations for Leetcode problems (API key integration and secure storage).
+- **Deployment**: Plan to deploy the app using AWS with PostgreSQL for production.
 
-- Additional methods to improve studying and retention.
-- A completely optional OpenAI GPT assistant to provide guidance and support.
-
-## Installation
-
+## Installation - Now defunct since switching to Django, will update soon! Likely, will be deployed by then as mentioned above.
 1. **Clone Repository:**
  
    ```
