@@ -1,26 +1,54 @@
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import './App.css';
 import FlashCardList from './flashCardListComponent';
 import { flashCardsData } from './flashCardDS';
 import topicContent from './topicContent';
 import SignUp from './SignUp';
 import SignIn from './SignIn';
+// NEXT STEPS: ADD A LOG OUT BUTTON, MAKE LOGIN AND LOGOUT BUTTONS NEATER, CONTINUE WORKING ON CONTENT
 
 function Home() {
   const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated] = useState(false); 
+  const [username, setUsername] = useState('');
 
-  const handleItemClick = (item) => {
+  useEffect(() => {
+    fetch('/api/check-auth/', { // Check user authentication and set accordingly
+    method: 'GET',
+    credentials: 'include',
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Auth check data:', data);
+      setIsAuthenticated(data.isAuthenticated);
+      if (data.isAuthenticated) {
+        setUsername(data.username)
+      }
+    })
+  }, [])
+
+  const handleItemClick = (item) => { 
     console.log(`${item} clicked`);
-    navigate(`/${item.toLowerCase().replace(/ /g, '_')}`);
+    navigate(`/${item.toLowerCase().replace(/ /g, '_')}`); // Lowercase and replace space with _. So "Two Pointer" -> "two_pointer" 
   };
-
 
   return (
     <div>
       <div className="header-container">
         <h1>Python Leetcode Grind Assistant</h1>
-        <p>A tool to help you master Leetcode problems by understanding their patterns and 'tricks'!</p>
+        <p>A tool to help you master Leetcode problems/categories by understanding their overarching patterns and tricks!</p>
         <p>Created and written by Josue Lopez</p>
+
+        {/* Conditionally render the login button or welcome message */}
+        {!isAuthenticated ? (
+          <Link to="/signin">
+          <button>Login or Sign Up</button>
+          </Link>
+        ) : (
+          <p>Welcome, {username}!</p> 
+        )}
+
       </div>
       <div className="boxes-container">
         <div className="box1">

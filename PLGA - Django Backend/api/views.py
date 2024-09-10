@@ -4,7 +4,7 @@ from django.http import JsonResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
-@api_view(['POST'])
+@api_view(['POST']) # A
 def user_signup(request):
     username = request.data.get('username')
     password = request.data.get('password')
@@ -12,8 +12,9 @@ def user_signup(request):
     if User.objects.filter(username=username).exists():
         return JsonResponse({'message': 'Username already taken'}, status = 400)
 
-    user = User.objects.create_user(username=username, passwoord=password)
+    user = User.objects.create_user(username=username, password=password)
     user.save()
+    login(request, user)
 
     return JsonResponse({'message': 'User successfully registered!'}, status = 201)
 
@@ -24,10 +25,20 @@ def user_signin(request):
     user = authenticate(request, username=username, password=password)
 
     if user is not None:
-        login(request, user)
+        print(login(request, user))
+        
         return JsonResponse({'message': 'Login successful!'}, status=200)
     else:
         return JsonResponse({'message': 'Invalid credentials'}, status=400)
+    
+@api_view(['GET'])
+def check_authentication(request):
+    if request.user.is_authenticated:
+        return JsonResponse({'isAuthenticated': True, 'username': request.user.username}, status = 200)
+    else:
+        return JsonResponse({'isAuthenticated': False}, status=200)
+
+
 
 
         

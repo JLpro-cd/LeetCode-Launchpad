@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { getCookie } from './utils';
 
 const SignIn = () => {
     const [username, setUsername] = useState('')
@@ -12,16 +13,24 @@ const SignIn = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        fetch('http://127.0.0.1:8000/api/signin/', {
+        fetch('/api/signin/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken'),
             },
+            credentials: 'include',
             body: JSON.stringify({ username, password}),
         })
-            .then((response) => response.json())
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Invalid credentials');
+                }
+            })
             .then((data) => {
-                if (data.message === 'Login Successful!') {
+                if (data.message === 'Login successful!') {
                     setSuccessMessage('Login successful! Happy studying!');
                     navigate('/');
                 } else {
