@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import './App.css';
-import FlashCardList from './flashCardListComponent';
-import { flashCardsData } from './flashCardDS';
+import FlashCardList from './components/flashCard/flashCardListComponent';
+import { flashCardsData } from './components/flashCard/flashCardDS';
 import topicContent from './topicContent';
-import SignUp from './SignUp';
-import SignIn from './SignIn';
+import SignUp from './components/Auth/SignUp';
+import SignIn from './components/Auth/SignIn';
+import Button from '@mui/material/Button';
+import { getCookie } from './util/utils';
 // NEXT STEPS: ADD A LOG OUT BUTTON, MAKE LOGIN AND LOGOUT BUTTONS NEATER, CONTINUE WORKING ON CONTENT
 
 function Home() {
@@ -13,20 +15,42 @@ function Home() {
   const [isAuthenticated, setIsAuthenticated] = useState(false); 
   const [username, setUsername] = useState('');
 
-  useEffect(() => {
-    fetch('/api/check-auth/', { // Check user authentication and set accordingly
+  useEffect(() => { // Check user authentication and set accordingly
+    fetch('/api/check-auth/', { 
     method: 'GET',
     credentials: 'include',
   })
     .then(response => response.json())
     .then(data => {
-      console.log('Auth check data:', data);
       setIsAuthenticated(data.isAuthenticated);
       if (data.isAuthenticated) {
         setUsername(data.username)
       }
     })
   }, [])
+
+  const handleLogout = () => {
+    fetch('/api/logout/', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': getCookie('csrftoken'),
+    },
+      credentials: 'include',
+    })
+      .then((response) => {
+        if (response.ok) {
+          setIsAuthenticated(false);
+          setUsername('');
+          navigate('/');
+        } else {
+          console.error("Failed to log out");
+        }
+      })
+      .catch((error) => {
+        console.error("Error during logout", error);
+      })
+  };
 
   const handleItemClick = (item) => { 
     console.log(`${item} clicked`);
@@ -43,10 +67,13 @@ function Home() {
         {/* Conditionally render the login button or welcome message */}
         {!isAuthenticated ? (
           <Link to="/signin">
-          <button>Login or Sign Up</button>
+          <Button variant="outlined">Log In or Sign Up</Button>
           </Link>
         ) : (
+          <>
           <p>Welcome, {username}!</p> 
+          <Button variant="outlined" onClick = {handleLogout}>Sign Out</Button>
+          </>
         )}
 
       </div>

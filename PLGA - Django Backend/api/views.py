@@ -2,7 +2,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.http import JsonResponse
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 @api_view(['POST']) # A
 def user_signup(request):
@@ -37,6 +37,11 @@ def check_authentication(request):
         return JsonResponse({'isAuthenticated': True, 'username': request.user.username}, status = 200)
     else:
         return JsonResponse({'isAuthenticated': False}, status=200)
+
+@api_view(['DELETE'])
+def user_logout(request):
+    logout(request)
+    return JsonResponse({"message": "Sucessfully logged out"}, status=200)
 
 
 
