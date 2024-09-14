@@ -8,7 +8,7 @@ html {
 
 
 body {
-  background-color: #0f13497c; 
+  background-color: #121212; 
   margin: 0;
   padding: 0;
   display: flex;
@@ -26,14 +26,23 @@ body {
   gap: 2rem; 
 }
 
+.web-title {
+  text-shadow: 3px 3px #666666;
+}
+
 .box1, .box2 {
-  background: #212558cb;
+  background: #1313b9;
   border: 5px solid rgb(112, 104, 104);
   border-radius: 10px;
   padding: 1rem;
   width: 400px;
   display: flex;
   flex-direction: column;
+}
+
+.list-boxes {
+  background: #100c0c;
+  width: 400px;
 }
 
 .box1 ul li,
@@ -89,13 +98,27 @@ h2 {
   grid-column: 1;
 }
 
-a {
-  display: inline-block; /* Ensures transform works */
+.hover-text {
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+  font-weight: 300;
+}
+
+.hover-text:hover {
+  color: lightblue;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+
+.sign-in-out {
+  color: white;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-a:hover {
-  color: #ff6347;
+.sign-in-out:hover {
+  color: lightblue;
+  cursor: pointer;
   transform: scale(1.05);
 }
 

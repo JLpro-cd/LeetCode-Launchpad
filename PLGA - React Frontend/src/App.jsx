@@ -6,9 +6,9 @@ import { flashCardsData } from './components/flashCard/flashCardDS';
 import topicContent from './topicContent';
 import SignUp from './components/Auth/SignUp';
 import SignIn from './components/Auth/SignIn';
-import Button from '@mui/material/Button';
+import { Box, Button, Typography, List, ListItem, Grid2 } from '@mui/material';
 import { getCookie } from './util/utils';
-// NEXT STEPS: ADD A LOG OUT BUTTON, MAKE LOGIN AND LOGOUT BUTTONS NEATER, CONTINUE WORKING ON CONTENT
+// NEXT STEPS: fill out home page more, work on content, start optional GPT API implementation
 
 function Home() {
   const navigate = useNavigate();
@@ -58,52 +58,54 @@ function Home() {
   };
 
   return (
-    <div>
-      <div className="header-container">
-        <h1>Python Leetcode Grind Assistant</h1>
-        <p>A tool to help you master Leetcode problems/categories by understanding their overarching patterns and tricks!</p>
-        <p>Created and written by Josue Lopez</p>
-
+    <Box p = {3}>
+      <Box textAlign="center" mb = {4}>
+        <Typography className= "web-title" variant="h3" sx={{fontWeight: 700}}>Python Leetcode Grind Assistant</Typography>
+        <Typography variant="subtitle1">A tool to help you master Leetcode problems/categories by understanding their overarching patterns and tricks!</Typography>
+        <Typography p = {2} variant = "body2">Created and written by Josue Lopez</Typography>
         {/* Conditionally render the login button or welcome message */}
         {!isAuthenticated ? (
           <Link to="/signin">
-          <Button variant="outlined">Log In or Sign Up</Button>
+          <Button className="sign-in-out" variant="outlined">Log In or Sign Up</Button>
           </Link>
         ) : (
           <>
           <p>Welcome, {username}!</p> 
-          <Button variant="outlined" onClick = {handleLogout}>Sign Out</Button>
+          <Button className="sign-in-out" variant="outlined" onClick = {handleLogout}>Sign Out</Button>
           </>
         )}
-
-      </div>
-      <div className="boxes-container">
-        <div className="box1">
-          <h2>Select a problem category to study</h2>
-          <ul>
-            <li onClick={() => handleItemClick('Hashing')}><div>Hashing</div></li>
-            <li onClick={() => handleItemClick('Two Pointer')}><div>Two Pointer</div></li>
-            <li onClick={() => handleItemClick('Sliding Window')}><div>Sliding Window</div></li>
-            <li onClick={() => handleItemClick('Binary Search')}><div>Binary Search</div></li>
-            <li onClick={() => handleItemClick('Graphs')}><div>Graphs</div></li>
-            <li onClick={() => handleItemClick('Backtracking')}><div>Backtracking</div></li>
-            <li onClick={() => handleItemClick('Dynamic Programming')}><div>Dynamic Programming</div></li>
-          </ul>
-        </div>
-        <div className="box2">
-          <h2>Study a specific data structure</h2>
-          <ul>
-            <li onClick={() => handleItemClick('List')}><div>List</div></li>
-            <li onClick={() => handleItemClick('Set')}><div>Set</div></li>
-            <li onClick={() => handleItemClick('Dictionary')}><div>Dictionary</div></li>
-            <li onClick={() => handleItemClick('Linked List')}><div>Linked List</div></li>
-            <li onClick={() => handleItemClick('Queue')}><div>Queue (deque)</div></li>
-            <li onClick={() => handleItemClick('Tree')}><div>Tree</div></li>
-            <li onClick={() => handleItemClick('Heap')}><div>Heap</div></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+      </Box>
+      <Grid2 container spacing = {12}>
+        <Grid2>
+          <Box className = "list-boxes" border = {1} borderColor = "gray" borderRadius={4} p = {3}>
+            <Typography variant = "h5" sx= {{fontWeight: 700 }}>Select a problem category to study</Typography>
+            <List>
+            <ListItem className="hover-text" onClick={() => handleItemClick('Hashing')}>Hashing</ListItem>
+            <ListItem className="hover-text" onClick={() => handleItemClick('Two Pointer')}>Two Pointer</ListItem>
+            <ListItem className="hover-text" onClick={() => handleItemClick('Sliding Window')}>Sliding Window</ListItem>
+            <ListItem className="hover-text" onClick={() => handleItemClick('Binary Search')}>Binary Search</ListItem>
+            <ListItem className="hover-text" onClick={() => handleItemClick('Graphs')}>Graphs</ListItem>
+            <ListItem className="hover-text" onClick={() => handleItemClick('Backtracking')}>Backtracking</ListItem>
+            <ListItem className="hover-text" onClick={() => handleItemClick('Dynamic Programming')}>Dynamic Programming</ListItem>
+            </List>
+          </Box>
+        </Grid2>
+        <Grid2>
+          <Box className = "list-boxes" border = {1} borderColor = "gray" borderRadius = {4} p = {3}>
+            <Typography variant = "h5" sx= {{fontWeight: 700 }}>Study a specific data structure</Typography>
+            <List>
+            <ListItem className="hover-text" onClick={() => handleItemClick('List')}>List</ListItem>
+            <ListItem className="hover-text" onClick={() => handleItemClick('Set')}>Set</ListItem>
+            <ListItem className="hover-text" onClick={() => handleItemClick('Dictionary')}>Dictionary</ListItem>
+            <ListItem className="hover-text" onClick={() => handleItemClick('Linked List')}>Linked List</ListItem>
+            <ListItem className="hover-text" onClick={() => handleItemClick('Queue')}>Queue (Deque)</ListItem>
+            <ListItem className="hover-text" onClick={() => handleItemClick('Tree')}>Tree</ListItem>
+            <ListItem className="hover-text" onClick={() => handleItemClick('Heap')}>Heap</ListItem>
+            </List>
+          </Box>
+        </Grid2>
+      </Grid2>
+    </Box>
   );
 }
 
