@@ -1,7 +1,7 @@
-# Python Leetcode Grind Assistant
+# Python LeetCode Grind Assistant
 
 ## Introduction
-- This is a project I started working on in order to gain some more experience with React and Django while deepening my understanding of Leetcode-related concepts.
+- This is a project I started working on in order to gain some more experience with React and Django while deepening my understanding of LeetCode-related concepts.
 - The Python Leetcode Grind Assistant is designed for individuals at any level preparing for technical interviews, particularly focusing on Python.
 - The emphasis is on problem-solving 'tricks' and memorization of abstract patterns.
 
