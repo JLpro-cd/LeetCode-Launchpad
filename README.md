@@ -1,8 +1,8 @@
-# Python LeetCode Grind Assistant
+# LeetCode Launchpad
 
 ## Introduction
 - This is a project I started working on in order to gain some more experience with React and Django while deepening my understanding of LeetCode-related concepts.
-- The Python Leetcode Grind Assistant is designed for individuals at any level preparing for technical interviews, particularly focusing on Python.
+- LeetCode Launchpad is tailored for those new to technical interview preparation, providing a focused introduction to LeetCode problem categories and essential Python concepts.
 - The emphasis is on problem-solving 'tricks' and memorization of abstract patterns.
 - This is still a work in progress, not all content is finished yet!
 
@@ -26,7 +26,7 @@
 1. **Clone Repository:**
  
    ```
-   git clone https://github.com/JLpro-cd/Python-Leetcode-Grind-Assistant
+   git clone https://github.com/JLpro-cd/LeetCode-Launchpad
    ```
 
 2. **Install Dependencies:**
