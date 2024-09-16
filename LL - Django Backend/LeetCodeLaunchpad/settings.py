@@ -58,7 +58,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'PLGA.urls'
+ROOT_URLCONF = 'LeetCodeLaunchpad.urls'
 
 TEMPLATES = [
     {
@@ -76,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'PLGA.wsgi.application'
+WSGI_APPLICATION = 'LeetCodeLaunchpad.wsgi.application'
 
 
 # Database
