@@ -128,17 +128,24 @@ h2 {
   background-color: #999;
 }
 
+.example-description {
+  cursor: default;
+}
+
 .trick-description {
   grid-column: 3;
   font-size: 1rem;
   color: #ffffff;
   white-space: normal;
   word-wrap: break-word;
+  cursor: default;
 }
 
 .trick-description p {
   margin-bottom: 1.5rem;
 }
+
+
 
 
 

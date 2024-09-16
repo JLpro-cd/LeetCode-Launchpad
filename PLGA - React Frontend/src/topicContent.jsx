@@ -16,15 +16,19 @@ const topicContent = {
                 </div>
                 <div className="separator"></div>
                 <div className="trick-description">
-                  Something important to note right away is that we are being given a sorted array - This is important because often enough, this plays a pivotal role in finding the solution. Immediately pivot to thinking: "How can I use the fact that the array is sorted to help me solve the problem?"
-                  <p></p>
-                  Another important thing is the required O(1) space complexity, meaning we cannot use any additional data structures in the answer. This should also nudge us towards a two pointer approach if we weren't thinking about it yet, as the approach uses no additional data structures.
-                  <p></p>
-                  Begin with two pointers, one at the beginning of the string (<code>left</code>) and one at the end (<code>right</code>). We can take advantage of the array being sorted by checking the <code>sum</code> of <code>array[left] + array[right]</code>. If <code>sum &gt; target</code>, then
-                  we should subtract one from <code>right</code>, making our <code>sum</code> smaller. Inversely, if <code>sum &lt; target</code>, we should add one to <code>left</code> to increase our <code>sum</code>. If <code>sum == target</code> , then we have found our answer and we can:
-                  <p></p>
-                  <code>return [left + 1, right + 1]</code> 
-                  <p></p>
+                  <p>
+                    Something important to note right away is that we are being given a sorted array - This is important because often enough, this plays a pivotal role in finding the solution. Immediately pivot to thinking: "How can I use the fact that the array is sorted to help me solve the problem?"
+                  </p>
+                  <p>
+                    Another important thing is the required O(1) space complexity, meaning we cannot use any additional data structures in the answer. This should also nudge us towards a two pointer approach if we weren't thinking about it yet, as the approach uses no additional data structures.
+                  </p>
+                  <p>
+                    Begin with two pointers, one at the beginning of the string (<code>left</code>) and one at the end (<code>right</code>). We can take advantage of the array being sorted by checking the <code>sum</code> of <code>array[left] + array[right]</code>. If <code>sum &gt; target</code>, then
+                    we should subtract one from <code>right</code>, making our <code>sum</code> smaller. Inversely, if <code>sum &lt; target</code>, we should add one to <code>left</code> to increase our <code>sum</code>. If <code>sum == target</code> , then we have found our answer and we can:
+                  </p>
+                  <p>
+                    <code>return [left + 1, right + 1]</code> 
+                  </p>
                   Keeping in mind that this is a 1-indexed array, meaning it begins count at 1 instead of 0. This is why we add 1 to both of the final indices.
                 </div>
               </div>
@@ -37,14 +41,18 @@ const topicContent = {
                 </div>
                 <div className="separator"></div>
                 <div className="trick-description">
-                  Whenever a problem mentions 'repeating' or 'duplicates', sets and dictionaries should come to mind, as they allows us to quickly check for the existence of values within them. In this problem, we want to create a 'sliding window' with our two pointers, updating it as we find repeating characters
-                  <p></p>
-                  We will use two pointers, <code>left</code> and <code>right</code>, both beginning at <code>0</code>. We will use <code>right</code> to navigate through the string, checking if a character is in our <code>charSet</code>:
-                  <p></p>
-                  If it isn't in <code>charSet</code>, we add it to our set and iterate again, but not before checking if our current count is greater than our total count. We can do this with <code>answer = max(answer, right - left + 1)</code>, where <code>right - left + 1</code> is our current substring length
-                  <p></p>
-                  If it is in <code>charSet</code>, then we start updating <code>left</code> by 1, removing <code>charSet[left]</code> along the way so that we can begin our count again with an empty set.
-                  <p></p>
+                  <p>
+                    Whenever a problem mentions 'repeating' or 'duplicates', sets and dictionaries should come to mind, as they allows us to quickly check for the existence of values within them. In this problem, we want to create a 'sliding window' with our two pointers, updating it as we find repeating characters
+                  </p>
+                  <p>
+                    We will use two pointers, <code>left</code> and <code>right</code>, both beginning at <code>0</code>. We will use <code>right</code> to navigate through the string, checking if a character is in our <code>charSet</code>:
+                  </p>
+                  <p>
+                    If it isn't in <code>charSet</code>, we add it to our set and iterate again, but not before checking if our current count is greater than our total count. We can do this with <code>answer = max(answer, right - left + 1)</code>, where <code>right - left + 1</code> is our current substring length
+                  </p>
+                  <p>
+                    If it is in <code>charSet</code>, then we start updating <code>left</code> by 1, removing <code>charSet[left]</code> along the way so that we can begin our count again with an empty set.
+                  </p>
                   Once <code>right</code> reaches <code>len(s)</code>, we have finished and can return <code>answer</code>.
                 </div>
               </div>
@@ -57,18 +65,21 @@ const topicContent = {
                 </div>
                 <div className="separator"></div>
                 <div className="trick-description">
-                  When working with strings, pay extra attention to requirements. For this problem, we need to ensure the comparison is case-insensitive and ignores non-alphanumeric characters. Python provides useful methods to help with this:
-                  <p></p>
-                  <b>Cleaning the String:</b> <br />
-                  - Use <code>str.lower()</code> to convert the string to lowercase.<br />
-                  - Use <code>filter(str.isalnum, string)</code> to remove non-alphanumeric characters.
-                  <p></p>
+                  <p>
+                    When working with strings, pay extra attention to requirements. For this problem, we need to ensure the comparison is case-insensitive and ignores non-alphanumeric characters. Python provides useful methods to help with this:
+                  </p>
+                  <p>
+                    <b>Cleaning the String:</b> <br />
+                    - Use <code>str.lower()</code> to convert the string to lowercase.<br />
+                    - Use <code>filter(str.isalnum, string)</code> to remove non-alphanumeric characters.
+                  </p>
                   Example:
                   <pre><code>
                   cleaned_str = ''.join(filter(str.isalnum, original_string.lower()))
                   </code></pre>
-                  After cleaning, we can use a two-pointer technique to check for a palindrome:
-                  <p></p>
+                  <p>
+                    After cleaning, we can use a two-pointer technique to check for a palindrome:
+                  </p>
                   Begin with two pointers, one at the beginning of the string (<code>left</code>) and one at the end (<code>right</code>). Check that both point to the same character (<code>cleaned_str[left] == cleaned_str[right]</code>), and if they do, bring them both one index closer to the center. If <code>left &gt; right</code>, then we have checked both halves for equality and can safely return <code>True</code>. If the pointers are ever not equal, return <code>False</code>.
   
                 </div>
@@ -96,16 +107,20 @@ const topicContent = {
                 </div>
                 <div className="separator"></div>
                 <div className="trick-description">
-                  Although this problem is relatively simple, it highlights an important point when it comes to hashing in Python. "Do I want to use a set or a dictionary here?"
-                  <p></p>
-                  One of the main considerations in deciding between a set and a dictionary is whether you need to keep track of the frequency of values. If frequency tracking is required, then a dictionary is the appropriate choice.
-                  <p></p>
-                  If you only care about the presence of values, a set will likely suffice and be easier to work with. 
-                  <p></p>
+                  <p>
+                    Although this problem is relatively simple, it highlights an important point when it comes to hashing in Python. "Do I want to use a set or a dictionary here?"
+                  </p>
+                  <p>
+                    One of the main considerations in deciding between a set and a dictionary is whether you need to keep track of the frequency of values. If frequency tracking is required, then a dictionary is the appropriate choice.
+                  </p>
+                  <p>
+                    If you only care about the presence of values, a set will likely suffice and be easier to work with. 
+                  </p>
                   In this problem, we only care about distinct integers and whether they are in the other list, so a set is more appropriate. We can convert these initial lists into sets using <code>set(nums1)</code> and <code>set(nums2)</code>. This allows us to efficiently check for the presence of elements between the two lists. Now, we can iterate through both lists separately, checking if each number is not in the other list's set. If it isn't, we are free to add it to our answer list. <br></br>
                   <br></br>
-                  <b>BUT WAIT!</b>
-                  <p></p>
+                  <p>
+                    <b>BUT WAIT!</b>
+                  </p>
                   As our answer currently is, we will be returning duplicates in our answer list (i.e. <code>[[3, 3] [4, 5]]</code> where it should be <code>[[3], [4, 5]]</code>). Does this ring any bells? Instead of inserting our numbers into answer lists, we can add them to two separate sets, and then convert them back to lists at the end with <code>list()</code>. This will ensure our answer lists have no duplicates.
                 </div>
               </div>
@@ -118,15 +133,19 @@ const topicContent = {
                 </div>
                 <div className="separator"></div>
                 <div className="trick-description">
-                  The word 'occurrences' in the title and description should alarm us that we might need to use a dictionary.
-                  <p></p>
-                  Essentially, we want to count how many occurrences each value has (i.e. its frequency), which we can do by iterating through and updating our dictionary, which we'll call <code>freq</code>. 
-                  We can safely create new occurrences and update existing ones in <code>freq</code> by iterating through the array and using the <code>.get()</code> method:
-                  <p></p>
-                  <code>freq[num] = freq.get(num, 0) + 1 </code> 
-                  <p></p>
-                  This is essentially saying "update existing values' counts by one, or initialize the count to one if it doesn't exist yet". We have to be careful with trying to access values in a dictionary that do not exist (or else errors occur), which why we do it this way.
-                  <p></p>
+                  <p>
+                    The word 'occurrences' in the title and description should alarm us that we might need to use a dictionary.
+                  </p>
+                  <p>
+                    Essentially, we want to count how many occurrences each value has (i.e. its frequency), which we can do by iterating through and updating our dictionary, which we'll call <code>freq</code>. 
+                    We can safely create new occurrences and update existing ones in <code>freq</code> by iterating through the array and using the <code>.get()</code> method:
+                  </p>
+                  <p>
+                    <code>freq[num] = freq.get(num, 0) + 1 </code> 
+                  </p>
+                  <p>
+                    This is essentially saying "update existing values' counts by one, or initialize the count to one if it doesn't exist yet". We have to be careful with trying to access values in a dictionary that do not exist (or else errors occur), which why we do it this way.
+                  </p>
                   Finally, we can iterate through <code>freq.values()</code>, checking for duplicates. You can do this with a new set, where we check if the value is within it. If it is, return <code>False</code>, otherwise, add it to the set. If we make it past this loop, we can safely <code>return True</code>.
                 </div>
               </div>
@@ -139,14 +158,18 @@ const topicContent = {
                 </div>
                 <div className="separator"></div>
                 <div className="trick-description">
-                  I recommend that you click on the Leetcode link and read their description if you are confused, as the premise of the problem can be hard to understand.
-                  <p></p>
-                  This one seems tricky, but it's actually straightforward you understand what it is asking. Despite both operations, we still need the same set of characters in both strings. Therefore, we can check if <code>set(word1) != set(word2)</code> and <code>return False</code> if they are not equal.
-                  <p></p>
-                  However, it's still possible that the two strings are not 'close' even if they make it past this check. Knowing that they do have the same set of characters, we need to compare the frequencies of these characters. The specific characters don’t matter; only the frequencies themselves do. <br></br>
-                  <p></p>
-                  We can use <code>Counter(word1)</code> and <code>Counter(word2)</code> to find the frequencies  (lets call the result <code>counter1</code> and <code>counter2</code>) of each letter, and then sort <code>counter1.values()</code> and <code>counter2.values()</code>. Once we have them sorted, we just need to check if they are equal. <br></br>
-                  <p></p>
+                  <p>
+                    I recommend that you click on the Leetcode link and read their description if you are confused, as the premise of the problem can be hard to understand.
+                  </p>
+                  <p>
+                    This one seems tricky, but it's actually straightforward you understand what it is asking. Despite both operations, we still need the same set of characters in both strings. Therefore, we can check if <code>set(word1) != set(word2)</code> and <code>return False</code> if they are not equal.
+                  </p>
+                  <p>
+                    However, it's still possible that the two strings are not 'close' even if they make it past this check. Knowing that they do have the same set of characters, we need to compare the frequencies of these characters. The specific characters don’t matter; only the frequencies themselves do. <br></br>
+                  </p>
+                  <p>
+                    We can use <code>Counter(word1)</code> and <code>Counter(word2)</code> to find the frequencies  (lets call the result <code>counter1</code> and <code>counter2</code>) of each letter, and then sort <code>counter1.values()</code> and <code>counter2.values()</code>. Once we have them sorted, we just need to check if they are equal. <br></br>
+                  </p>
                   If they are, then <code>return True</code>, otherwise <code>return False</code>
                 </div>
               </div>
@@ -171,21 +194,27 @@ const topicContent = {
                 </div>
                 <div className="separator"></div>
                 <div className="trick-description">
-                  To find the longest substring without duplicate characters, we can use a set <code>ourSet</code> to keep track of the characters currently in our sliding window. We will use two pointers <code>l</code> and <code>r</code>, both which will be <code>= 0</code>. We will iterate through the string with <code>r</code>. 
-                  <p></p>
-                  With sliding window problems, there is something that defines progression/iteration. In this problem, this "something" is checking if the character at <code>s[r]</code> already in <code>ourSet</code>. If it isn't we add it to <code>ourSet</code> and move <code>r</code> forward by <code>1</code>
-                  <p></p>
-                  While we're doing this, we want to keep track of the longest our window gets, which we can effectively get with <code>len(ourSet)</code>. I like doing <code>maxLength = max(maxLength, len(ourSet))</code> after we add <code>s[r]</code> to <code>ourSet</code>, <br></br> but you could also get the length of the window with <code>r - l + 1</code> 
-                  <p></p>
-                  If <code>s[r]</code> is in <code>ourSet</code>, then we must do something else. This part requires some thought and involves a common technique in sliding window problems. What could we do here? A couple ideas come to mind: <br></br>
-                  We could move <code>l</code> all the way to <code>r</code>, and start the count fresh. This is probably what most people think of doing initially, but consider a case such as with <code>s = "aearo"</code>. Moving the window directly to start at the second <code>"a"</code> would make our final count 
-                  <br></br>
-                  <code>3</code> intead of <code>4</code>, as we're skipping over the <code>"e"</code> <br></br>
-                  <p></p>
-                  Instead, what if we only removed what we needed to from the sliding window? We are essentially looking to remove the first "a", as that is one of the two duplicates. We should remove <code>s[l]</code> and increment it <code>while s[r]</code> is still in <code>ourSet</code>. 
-                  <p></p>
-                  This is what I was referring to previously. Many sliding window problems will use a <code>while</code> loop to move the left side of the sliding window to a correct position once again. Keep this in mind for future problems.
-                  <p></p>
+                  <p>
+                    To find the longest substring without duplicate characters, we can use a set <code>ourSet</code> to keep track of the characters currently in our sliding window. We will use two pointers <code>l</code> and <code>r</code>, both which will be <code>= 0</code>. We will iterate through the string with <code>r</code>. 
+                  </p>
+                  <p>
+                    With sliding window problems, there is something that defines progression/iteration. In this problem, this "something" is checking if the character at <code>s[r]</code> already in <code>ourSet</code>. If it isn't we add it to <code>ourSet</code> and move <code>r</code> forward by <code>1</code>
+                  </p>
+                  <p>
+                    While we're doing this, we want to keep track of the longest our window gets, which we can effectively get with <code>len(ourSet)</code>. I like doing <code>maxLength = max(maxLength, len(ourSet))</code> after we add <code>s[r]</code> to <code>ourSet</code>, <br></br> but you could also get the length of the window with <code>r - l + 1</code> 
+                  </p>
+                  <p>
+                    If <code>s[r]</code> is in <code>ourSet</code>, then we must do something else. This part requires some thought and involves a common technique in sliding window problems. What could we do here? A couple ideas come to mind: <br></br>
+                    We could move <code>l</code> all the way to <code>r</code>, and start the count fresh. This is probably what most people think of doing initially, but consider a case such as with <code>s = "aearo"</code>. Moving the window directly to start at the second <code>"a"</code> would make our final count 
+                    <br></br>
+                    <code>3</code> intead of <code>4</code>, as we're skipping over the <code>"e"</code> <br></br>
+                  </p>
+                  <p>
+                    Instead, what if we only removed what we needed to from the sliding window? We are essentially looking to remove the first "a", as that is one of the two duplicates. We should remove <code>s[l]</code> and increment it <code>while s[r]</code> is still in <code>ourSet</code>. 
+                  </p>
+                  <p>
+                    This is what I was referring to previously. Many sliding window problems will use a <code>while</code> loop to move the left side of the sliding window to a correct position once again. Keep this in mind for future problems.
+                  </p>
                   Once we've iterated through the entire string (<code>s[r]</code> reached <code>len(s)</code>), we can return <code>maxLength</code>, which represents the length of the longest substring found during the process.
                 </div>
               </div>
@@ -193,22 +222,58 @@ const topicContent = {
             <li>
               <div className="example-container">
                 <div className="example-content">
-                  <a href="https://leetcode.com/problems/unique-number-of-occurrences/description/" target="_blank" rel="noopener noreferrer">Unique Number of Occurrences</a>
-                  <p className="example-description"></p>
+                  <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/" target="_blank" rel="noopener noreferrer">Best Time to Buy and Sell Stock</a>
+                  <p className="example-description">Given an array prices, where prices[i] is the price of a given stock on the ith day, you want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit you can achieve from this transaction. If no profit can be made, return 0.</p>
                 </div>
                 <div className="separator"></div>
                 <div className="trick-description">
+                  <p>
+                    This is a relatively simple problem that involves some greedy thinking. We have the timeline of a stock, and each index forward means another day. We cannot buy a stock and sell it in the past (a previous index). 
+                  </p>
+                  <p>
+                    Knowing this, ask yourself the following: "Is there any reason for me to not buy the lowest priced stock I've seen so far?"
+                  </p>
+                  <p>
+                    This is our greedy heuristic. We will use a variable <code>maxprofit = 0</code> to keep track of our highest profit at any time. Let's use two pointers, <code>l</code> and <code>r</code> (which are initialized to 0) and iterate through <code>prices</code>. <code>while r &lt; len(prices)</code>, will be our condition, as once we've seen every stock price, we're finished.
+                  </p>                    
+                  <p>
+                    If <code>prices[r] &gt; prices[l]</code>, then we've found a new lowest price, and we can set l = r. This is like putting a pin on the price, saying "we'll stay here until I find something even lower."  
+                  </p>
+                  <p>
+                    We also want to keep track of our max profit in every iteration, so before finishing this iteration, let's see if we have a new max with: <code>maxprofit = max(maxprofit, prices[r] - prices[l])</code>.
+                  </p>
+                  <p>
+                    Finally, we increment <code>r</code> by one and continue. Once we exit out of the while loop (due to r reaching the end), we can safely return <code>maxprofit</code>
+                  </p>
                 </div>
               </div>
             </li>
             <li>
               <div className="example-container">
                 <div className="example-content">
-                  <a href="https://leetcode.com/problems/determine-if-two-strings-are-close/description/" target="_blank" rel="noopener noreferrer">Determine if Two Strings Are Close</a>
-                  <p className="example-description"></p>
+                  <a href="https://leetcode.com/problems/permutation-in-string/description/" target="_blank" rel="noopener noreferrer">Permutation in String</a>
+                  <p className="example-description">Given two strings s1 and s2, return True if s2 contains a permutation of s1, or False otherwise.</p>
                 </div>
                 <div className="separator"></div>
                 <div className="trick-description">
+                  <p>
+                    Although this problem may seem complicated initially, it really isn't too bad. We're going to check every substring of size <code>len(s1)</code> in <code>s2</code> and see if they contain the same frequency of characters.
+                  </p>
+                  <p>
+                    To begin, let's initialize our two pointers <code>l = 0</code> and <code>r = len(s1) - 1</code>, as well as two dictionaries (frequency maps) <code>freq1 = Counter(s1)</code> and <code>freq2 = Counter(s2[:r])</code>. Like mentioned previously, we want to check all of s2's substrings of size <code>len(s1)</code>, hence the <code>s2[:r]</code>. 
+                  </p>
+                  <p>
+                    Now, we will iterate through <code>s2</code> with <code>while r &lt; len(s2)</code>. We will add the current character we're on (<code>s2[r]</code>) to freq2 with <code>freq2[s2[r]] = freq2.get(s2[r], 0) + 1</code>. This is essentially saying, "if <code>s2[r]</code> is in the dictionary, add 1 to the count, else add it to the dictionary with a count of 1".
+                  </p>
+                  <p>
+                    After doing that, we have the character frequencies of all of the entire substring in our current window (the window being l to r). We check if <code>freq1 == freq2</code>. If it is ==, we can return <code>True</code>, as this means s2 contains a permutation of s1.
+                  </p>
+                  <p>
+                    If it isn't ==, we want to slide our window forward, meaning we must remove what was at the end of it. <code>freq2[s2[l]] -= 1</code>, along with incrementing <code>l</code> and <code>r</code> by one after will do just this.
+                  </p>
+                  <p>
+                    If we exit out of the loop, we went through all of s2 and didn't find a permutation. We can safely return <code>False</code>.
+                  </p>
                 </div>
               </div>
             </li>

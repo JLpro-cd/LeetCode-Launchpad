@@ -60,8 +60,8 @@ function Home() {
   return (
     <Box p = {3}>
       <Box textAlign="center" mb = {4}>
-        <Typography className= "web-title" variant="h3" sx={{fontWeight: 700}}>Python Leetcode Grind Assistant</Typography>
-        <Typography variant="subtitle1">A tool to help you master Leetcode problems/categories by understanding their overarching patterns and tricks!</Typography>
+        <Typography className= "web-title" variant="h3" sx={{fontWeight: 700}}>LeetCode Launchpad</Typography>
+        <Typography variant="subtitle1">Your guide to exploring LeetCode problems and categories by uncovering key patterns and strategies!</Typography>
         <Typography p = {2} variant = "body2">Created and written by Josue Lopez</Typography>
         {/* Conditionally render the login button or welcome message */}
         {!isAuthenticated ? (
