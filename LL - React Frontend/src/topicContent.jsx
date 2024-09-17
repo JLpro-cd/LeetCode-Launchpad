@@ -422,29 +422,93 @@ const topicContent = {
             <li>
               <div className="example-container">
                 <div className="example-content">
-                  <a href="https://leetcode.com/problems/find-the-difference-of-two-arrays/description/" target="_blank" rel="noopener noreferrer">Find the Difference of Two Arrays</a>
-                  <p className="example-description"></p>
+                  <a href="https://leetcode.com/problems/binary-search/description/" target="_blank" rel="noopener noreferrer">Binary Search</a>
+                  <p className="example-description">Given an array of integers nums, which is sorted in ascending order, and an integer target, write a function to search for target in nums. If target exists, return its index, else return -1. Algo must run with O(log n) time complexity.</p>
                 </div>
                 <div className="separator"></div>
                 <div className="trick-description">
+                  <p>
+                    This is the simplest binary search problem (although that doesn't mean it's necessarily easy!), and is the foundation for BS problems in the future. Generally, BS takes the following form:
+                  </p>
+                  <p>
+                    Given an array with some sort of heuristic or quality that allows us to determine where the target is (i.e. sorting, sqrt calcs), we check the middle value of the array. If this value is not our target, we can then pick either the left or right side to move onto.
+                  </p>
+                  <p>
+                    For example, in a sorted array <code>[1, 2, 3, 5]</code> w/ <code>target = 5</code>, <code>mid</code> would be  <code>= 1</code>, meaning <code>arr[mid] = 2</code>. Knowing the array is sorted, we would compare <code>2</code> to our target<code>5</code> and see that our target is greater. Therefore, it must be on the right side of the array.
+                  </p>
+                  <p>
+                    I personally prefer the iterative version of BS, so I present that version although you can do this recursively as well. Code wise, to begin we use two pointers, <code>l = 0</code> and <code>r = len(nums) - 1</code>. We have two choices for our while condition, but they function the same:
+                  </p>
+                  <p>
+                    1. <code>while l &lt;= r</code> - My personal preference. If you use this condition, then you must use <code>l = m + 1</code> and <code>r = m - 1</code> respectfully to select your half. 
+                    2. <code>while l &lt; r</code> - If you use this condition, then you must use <code>l = m + 1</code> and <code>r = m</code> respectfully to select your half.
+                  </p>
+                  <p>
+                    Now, inside our while loop, we need to get the midpoint m of the array. In Python, since integers are unbounded (meaning there is no limit to their size), we can simply do <code>m = (l + r) // 2</code>. However, in other languages, where integers are bounded, this can lead to overflow.
+                  </p>
+                  <p>
+                    You can easily solve this issue by calculating the midpoint with <code>m = l + (r - l) // 2</code> instead. This likely won't come up in an interview involving Python, but is good to know nonetheless.
+                  </p>
+                  <p>
+                    Finally, the conditions: If <code>nums[m] == target</code>, we can return m, the index of the target.
+                  </p>
+                  <p>
+                    Else if <code>nums[m] &gt; target</code>, <code>r = m - 1</code> or <code>r = m</code>, depending on which while condition you picked. We move to the left half by bringing the right pointer back.
+                  </p>
+                  <p>
+                    Else, (<code>nums[m] &lt; target</code>) <code>l = m + 1</code>. We move to the right half by bringing the left pointer forward.
+                  </p>
+                  <p>
+                    If we exit out of this loop, we can safely <code>return -1</code>, as we didn't find <code>target</code> in the array.
+                  </p>
                 </div>
               </div>
             </li>
             <li>
               <div className="example-container">
                 <div className="example-content">
-                  <a href="https://leetcode.com/problems/unique-number-of-occurrences/description/" target="_blank" rel="noopener noreferrer">Unique Number of Occurrences</a>
-                  <p className="example-description"></p>
+                  <a href="https://leetcode.com/problems/search-a-2d-matrix/description/" target="_blank" rel="noopener noreferrer">Search a 2D Matrix</a>
+                  <p className="example-description">Given a m x n integer matrix, sorted in non-decreasing order, return True if target is inside the matrix, else False. Solution must run in O(log (m * n)) time complexity</p>
                 </div>
                 <div className="separator"></div>
                 <div className="trick-description">
+                  <p>
+                    This is the same problem as before with a few extra steps. I think it's best to think of it as one big list with some caveats.
+                  </p>
+                  <p>
+                    First, calculate the <code>rows</code> and <code>cols</code> of the matrix with <code>len(matrix)</code> and <code>len(matrix[0])</code> respectfully. This is something you'll have to do a lot for graph problems in the future, by the way.
+                  </p>
+                  <p>
+                    We can set <code>l = 0</code> and <code>r = rows * cols - 1</code>. See how we're treating it as one big list still? Pick your preferred while condition for the loop (<code>l &lt;= r </code> or <code>l &lt; r</code>).
+                  </p>
+                  <p>
+                    Now, the hardest part of the problem. Calculating the midpoint in the matrix. our <code>midpoint = (l + r) // 2</code>, but we need to translate this to the matrix. 
+                  </p>
+                  <p>
+                    To do this, we use <code>cols</code>. The number of columns will help us translate the midpoint. <code>midrow = midpoint // cols</code> (integer division // to round down!) will give us the row. If we had <code>midpoint</code> 7 in a 3x4 matrix, <code>midrow = 7 // 4</code>, or 1, which is the second row!   
+                  </p>
+                  <p>
+                    <code>midcol</code> would be <code> = midpoint % cols</code>. With the same example as before, <code>midcol = 7 % 4</code>, which is 3. Our result is, <code>midpoint = 7</code>  in a 3x4 matrix is <code>matrix[1][3]</code>
+                  </p>
+                  <p>
+                    If <code>matrix[midpoint][midcol] == target</code>, we return True.
+                  </p>
+                  <p>
+                    If <code>matrix[midpoint][midcol] &gt; target</code>, <code>r = midpoint - 1</code> or <code>r = midpoint</code> depending on your while condition.
+                  </p>
+                  <p>
+                    Else, (<code>matrix[midpoint][midcol] &lt; target</code>) <code>l = midpoint + 1</code>.
+                  </p>
+                  <p>
+                    If we exit out of this loop, we can safely <code>return False</code>, as we didn't find <code>target</code> in the matrix.
+                  </p>
                 </div>
               </div>
             </li>
             <li>
               <div className="example-container">
                 <div className="example-content">
-                  <a href="https://leetcode.com/problems/determine-if-two-strings-are-close/description/" target="_blank" rel="noopener noreferrer">Determine if Two Strings Are Close</a>
+                  <a href="https://leetcode.com/problems/koko-eating-bananas/description/" target="_blank" rel="noopener noreferrer">Koko Eating Bananas</a>
                   <p className="example-description"></p>
                 </div>
                 <div className="separator"></div>
