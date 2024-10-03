@@ -8,7 +8,7 @@ html {
 
 
 body {
-  background-color: #121212; 
+  background: radial-gradient(ellipse at 50% 50%, hsl(212, 73%, 30%), hsl(243, 90%, 16%));
   margin: 0;
   padding: 0;
   display: flex;
@@ -27,7 +27,7 @@ body {
 }
 
 .web-title {
-  text-shadow: 3px 3px #666666;
+  text-shadow: 3px 4px #09a4f1d8;
 }
 
 .box1, .box2 {
@@ -73,7 +73,7 @@ li {
   border-bottom: 1px solid #999;
   display: flex;
   align-items: center;
-  cursor: pointer;
+  cursor: default;
   margin-bottom: 10px;
 }
 
@@ -88,15 +88,6 @@ h2 {
   font-family: 'Nunito Sans', sans-serif;
 }
 
-.example-container {
-  grid-template-rows: [row1-start] 25px [row1-end row2-start] 25px [row2-end];
-  grid-template-columns: auto 50px auto;
-  width: 120rem;
-}
-
-.example-content {
-  grid-column: 1;
-}
 
 .hover-text {
   color: white;
@@ -112,14 +103,14 @@ h2 {
 
 
 .sign-in-out {
-  color: white;
-  transition: transform 0.3s ease, color 0.3s ease;
+  color: rgb(0, 254, 72);
+  transition: transform 0.5s ease, color 0.3s ease;
 }
 
 .sign-in-out:hover {
-  color: lightblue;
+  color: rgb(255, 255, 255);
   cursor: pointer;
-  transform: scale(1.05);
+  transform: scale(1.10);
 }
 
 .separator {
@@ -127,29 +118,4 @@ h2 {
   width: 2px;
   background-color: #999;
 }
-
-.example-description {
-  cursor: default;
-}
-
-.trick-description {
-  grid-column: 3;
-  font-size: 1rem;
-  color: #ffffff;
-  white-space: normal;
-  word-wrap: break-word;
-  cursor: default;
-}
-
-.trick-description p {
-  margin-bottom: 1.5rem;
-}
-
-
-
-
-
-
-
-
 

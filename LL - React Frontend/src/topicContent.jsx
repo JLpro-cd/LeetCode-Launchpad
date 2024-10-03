@@ -4,11 +4,12 @@ const topicContent = {
       content: (
         <div>
           <p>The two-pointer technique is a useful tool for solving problems involving arrays or lists. It involves using two pointers to traverse the array or list in order to achieve a specific condition or goal.
-          <p></p>
+          <p className="desc">
           This technique differs from the sliding window approach in that it typically focuses on comparing the values at the pointers and making decisions based on those comparisons, rather than considering the entire contiguous subset between the pointers, as is done in the sliding window technique.</p>
+          </p>
           <h3>Examples:</h3>
           <ul>
-            <li>
+            <li className="topicLi">
               <div className="example-container">
                 <div className="example-content">
                   <a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/" target="_blank" rel="noopener noreferrer">Two Sum II - Input Array is Sorted</a>
@@ -290,7 +291,7 @@ const topicContent = {
             <li>
               <div className="example-container">
                 <div className="example-content">
-                  <a href="https://leetcode.com/problems/find-the-difference-of-two-arrays/description/" target="_blank" rel="noopener noreferrer">Find the Difference of Two Arrays</a>
+                  <a href="https://leetcode.com/problems/number-of-islands/description/" target="_blank" rel="noopener noreferrer">Number of Islands</a>
                   <p className="example-description"></p>
                 </div>
                 <div className="separator"></div>
@@ -301,7 +302,7 @@ const topicContent = {
             <li>
               <div className="example-container">
                 <div className="example-content">
-                  <a href="https://leetcode.com/problems/unique-number-of-occurrences/description/" target="_blank" rel="noopener noreferrer">Unique Number of Occurrences</a>
+                  <a href="https://leetcode.com/problems/rotting-oranges/description/" target="_blank" rel="noopener noreferrer">Rotting Oranges</a>
                   <p className="example-description"></p>
                 </div>
                 <div className="separator"></div>
@@ -312,7 +313,7 @@ const topicContent = {
             <li>
               <div className="example-container">
                 <div className="example-content">
-                  <a href="https://leetcode.com/problems/determine-if-two-strings-are-close/description/" target="_blank" rel="noopener noreferrer">Determine if Two Strings Are Close</a>
+                  <a href="https://leetcode.com/problems/clone-graph/description/" target="_blank" rel="noopener noreferrer">Clone Graph</a>
                   <p className="example-description"></p>
                 </div>
                 <div className="separator"></div>
@@ -333,7 +334,7 @@ const topicContent = {
             <li>
               <div className="example-container">
                 <div className="example-content">
-                  <a href="https://leetcode.com/problems/find-the-difference-of-two-arrays/description/" target="_blank" rel="noopener noreferrer">Find the Difference of Two Arrays</a>
+                  <a href="https://leetcode.com/problems/climbing-stairs/description/" target="_blank" rel="noopener noreferrer">Climbing Stairs</a>
                   <p className="example-description"></p>
                 </div>
                 <div className="separator"></div>
@@ -344,7 +345,7 @@ const topicContent = {
             <li>
               <div className="example-container">
                 <div className="example-content">
-                  <a href="https://leetcode.com/problems/unique-number-of-occurrences/description/" target="_blank" rel="noopener noreferrer">Unique Number of Occurrences</a>
+                  <a href="https://leetcode.com/problems/house-robber/description/" target="_blank" rel="noopener noreferrer">House Robber</a>
                   <p className="example-description"></p>
                 </div>
                 <div className="separator"></div>
@@ -355,7 +356,7 @@ const topicContent = {
             <li>
               <div className="example-container">
                 <div className="example-content">
-                  <a href="https://leetcode.com/problems/determine-if-two-strings-are-close/description/" target="_blank" rel="noopener noreferrer">Determine if Two Strings Are Close</a>
+                  <a href="https://leetcode.com/problems/longest-palindromic-subsequence/description/" target="_blank" rel="noopener noreferrer">Longest Palindromic Subsequence</a>
                   <p className="example-description"></p>
                 </div>
                 <div className="separator"></div>
@@ -378,7 +379,7 @@ const topicContent = {
             <li>
               <div className="example-container">
                 <div className="example-content">
-                  <a href="https://leetcode.com/problems/find-the-difference-of-two-arrays/description/" target="_blank" rel="noopener noreferrer">Find the Difference of Two Arrays</a>
+                  <a href="https://leetcode.com/problems/subsets/description/" target="_blank" rel="noopener noreferrer">Subsets</a>
                   <p className="example-description"></p>
                 </div>
                 <div className="separator"></div>
@@ -389,7 +390,7 @@ const topicContent = {
             <li>
               <div className="example-container">
                 <div className="example-content">
-                  <a href="https://leetcode.com/problems/unique-number-of-occurrences/description/" target="_blank" rel="noopener noreferrer">Unique Number of Occurrences</a>
+                  <a href="https://leetcode.com/problems/combination-sum/description/" target="_blank" rel="noopener noreferrer">Combination Sum</a>
                   <p className="example-description"></p>
                 </div>
                 <div className="separator"></div>
@@ -400,7 +401,7 @@ const topicContent = {
             <li>
               <div className="example-container">
                 <div className="example-content">
-                  <a href="https://leetcode.com/problems/determine-if-two-strings-are-close/description/" target="_blank" rel="noopener noreferrer">Determine if Two Strings Are Close</a>
+                  <a href="https://leetcode.com/problems/permutations/description/" target="_blank" rel="noopener noreferrer">Permutations</a>
                   <p className="example-description"></p>
                 </div>
                 <div className="separator"></div>

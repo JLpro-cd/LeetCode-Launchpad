@@ -1,0 +1,49 @@
+.topic-title {
+    text-shadow: 3px 4px #09a4f1d8;
+}
+
+.desc {
+    width: 125rem;
+    max-width: 125rem;
+    word-wrap: break-word;
+}
+
+
+
+.example-container {
+    grid-template-rows: [row1-start] 25px [row1-end row2-start] 25px [row2-end];
+    grid-template-columns: auto 50px auto;
+    width: 125rem;
+    max-width: 155rem;
+    background: #100c0c;
+    padding: 1rem;
+    border: 1px solid rgb(112, 104, 104);
+    border-radius: 10px;
+  }
+
+  .example-content {
+    grid-column: 1;
+    width: 100%;
+    width: 125rem;
+    max-width: 125rem;
+
+  }
+
+  .trick-description {
+    grid-column: 3;
+    font-size: 1rem;
+    color: #ffffff;
+    white-space: normal;
+    word-wrap: break-word;
+    cursor: default;
+    width: 125rem;
+    max-width: 125rem;
+  }
+
+  .example-description {
+    cursor: default;
+  }
+  
+  .trick-description p {
+    margin-bottom: 1.5rem;
+  }

@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import './App.css';
+import './topicContent.css'
 import FlashCardList from './components/flashCard/flashCardListComponent';
 import { flashCardsData } from './components/flashCard/flashCardDS';
 import topicContent from './topicContent';
@@ -60,13 +61,12 @@ function Home() {
   return (
     <Box p = {3}>
       <Box textAlign="center" mb = {4}>
-        <Typography className= "web-title" variant="h3" sx={{fontWeight: 700}}>LeetCode Launchpad</Typography>
-        <Typography variant="subtitle1">Your guide to exploring LeetCode problems and categories by uncovering key patterns and strategies!</Typography>
-        <Typography p = {2} variant = "body2">Created and written by Josue Lopez</Typography>
+        <Typography className="web-title" variant="h3" sx={{fontWeight: 700}}>LeetCode Launchpad</Typography>
+        <Typography sx={{ marginBottom: '1.5rem' }} variant="subtitle1">Your guide to exploring LeetCode problems and categories by uncovering key patterns and strategies!</Typography>
         {/* Conditionally render the login button or welcome message */}
         {!isAuthenticated ? (
           <Link to="/signin">
-          <Button className="sign-in-out" variant="outlined">Log In or Sign Up</Button>
+          <Button className="sign-in-out" variant="contained">Log In or Sign Up</Button>
           </Link>
         ) : (
           <>
@@ -126,7 +126,7 @@ const TopicPage = () => {
 
   return (
     <div>
-      <h1>{topicData.title}</h1>
+      <h1 className="topic-title">{topicData.title}</h1>
       <div>{topicData.content}</div>
       {flashcards && flashcards.length > 0 && (
         <>
